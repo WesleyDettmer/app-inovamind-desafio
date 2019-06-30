@@ -1,4 +1,5 @@
-import React, { PropTypes } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
 const Film = props => (
   <li className="results__item">
@@ -18,14 +19,14 @@ const Film = props => (
   </li>
 );
 
-// Film.propTypes = {
-//   item: PropTypes.shape({
-//     designation: PropTypes.string,
-//     name: PropTypes.string.isRequired,
-//     classification: PropTypes.string,
-//     language: PropTypes.string,
-//     type: PropTypes.string.isRequired
-//   })
-// };
+Film.propTypes = {
+  item: PropTypes.shape({
+    designation: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    classification: PropTypes.string,
+    language: PropTypes.string,
+    type: PropTypes.string.isRequired
+  })
+};
 
 export default Film;

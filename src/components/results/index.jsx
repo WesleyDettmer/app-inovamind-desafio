@@ -5,6 +5,7 @@ import Film from "./film.jsx";
 import Planet from "./planet.jsx";
 import Starship from "./starship.jsx";
 import Species from "./species.jsx";
+import * as sccs from "./result-component.scss";
 
 const Results = props => (
   <ul className="results">

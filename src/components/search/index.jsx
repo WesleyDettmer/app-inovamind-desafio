@@ -1,5 +1,6 @@
 import React from "../../../node_modules/react";
 import PropTypes from "prop-types";
+import * as sccs from "./search-component.scss";
 
 const Search = props => {
   const { value, onChange } = props;

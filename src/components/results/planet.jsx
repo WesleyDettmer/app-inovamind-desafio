@@ -1,4 +1,5 @@
-import React, { PropTypes } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
 const Planet = props => (
   <li className="results__item">
@@ -18,14 +19,14 @@ const Planet = props => (
   </li>
 );
 
-// Planet.propTypes = {
-//   item: PropTypes.shape({
-//     terrain: PropTypes.string,
-//     gravity: PropTypes.string,
-//     name: PropTypes.string.isRequired,
-//     population: PropTypes.string,
-//     type: PropTypes.string
-//   })
-// };
+Planet.propTypes = {
+  item: PropTypes.shape({
+    terrain: PropTypes.string,
+    gravity: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    population: PropTypes.string,
+    type: PropTypes.string
+  })
+};
 
 export default Planet;

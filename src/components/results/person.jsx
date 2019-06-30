@@ -1,4 +1,5 @@
-import React, { PropTypes } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
 const Person = props => (
   <li className="results__item">
@@ -18,14 +19,14 @@ const Person = props => (
   </li>
 );
 
-// Person.propTypes = {
-//   item: PropTypes.shape({
-//     name: PropTypes.string.isRequired,
-//     gender: PropTypes.string,
-//     height: PropTypes.string,
-//     mass: PropTypes.string,
-//     type: PropTypes.string
-//   })
-// };
+Person.propTypes = {
+  item: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    gender: PropTypes.string,
+    height: PropTypes.string,
+    mass: PropTypes.string,
+    type: PropTypes.string
+  })
+};
 
 export default Person;

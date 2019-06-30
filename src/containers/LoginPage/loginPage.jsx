@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-
 import { userActions } from "../../actions";
+import * as sccs from "./styles/login.scss";
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -40,8 +40,8 @@ class LoginPage extends React.Component {
     const { loggingIn } = this.props;
     const { username, password, submitted } = this.state;
     return (
-      <div className="col-md-6 col-md-offset-3">
-        <h2>Logain</h2>
+      <div className="col-md-6 col-md-offset-3 login-background-color">
+        <h2>Login</h2>
         <form name="form" onSubmit={this.handleSubmit}>
           <div
             className={

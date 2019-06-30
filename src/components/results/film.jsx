@@ -1,4 +1,5 @@
-import React, { PropTypes } from "../../../node_modules/react";
+import React from "../../../node_modules/react";
+import PropTypes from "prop-types";
 
 const Film = props => (
   <li className="results__item">
@@ -21,15 +22,15 @@ const Film = props => (
   </li>
 );
 
-// Film.propTypes = {
-//   item: PropTypes.shape({
-//     director: PropTypes.string,
-//     episode_id: PropTypes.number.isRequired,
-//     name: PropTypes.string.isRequired,
-//     producer: PropTypes.string,
-//     release_date: PropTypes.string,
-//     type: PropTypes.string.isRequired
-//   })
-// };
+Film.propTypes = {
+  item: PropTypes.shape({
+    director: PropTypes.string,
+    episode_id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    producer: PropTypes.string,
+    release_date: PropTypes.string,
+    type: PropTypes.string.isRequired
+  })
+};
 
 export default Film;

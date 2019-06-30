@@ -9,6 +9,8 @@ import { RegisterPage } from "../containers/RegisterPage";
 import { SearchPage } from "../containers/SearchPage";
 import { LoginPage } from "../containers/LoginPage";
 
+import * as sccs from "./styles/app-styles.scss";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +25,7 @@ class App extends React.Component {
   render() {
     const { alert } = this.props;
     return (
-      <div className="jumbotron">
+      <div className="jumbotron page-background-color">
         <div className="container">
           <div className="col-sm-8 col-sm-offset-2">
             {alert.message && (
