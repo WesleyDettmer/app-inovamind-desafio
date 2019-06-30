@@ -1,10 +1,11 @@
-import React, { PropTypes } from "react";
+import React from "react";
 
 import Person from "./person.jsx";
 import Film from "./film.jsx";
 import Planet from "./planet.jsx";
 import Starship from "./starship.jsx";
 import Species from "./species.jsx";
+
 import * as sccs from "./result-component.scss";
 
 const Results = props => (
@@ -25,9 +26,5 @@ const Results = props => (
     })}
   </ul>
 );
-
-// Results.propTypes = {
-//   items: PropTypes.arrayOf(PropTypes.object).isRequired
-// };
 
 export default Results;

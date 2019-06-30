@@ -50,7 +50,6 @@ function mapStateToProps(state) {
     isFetching: true,
     items: []
   };
-
   return {
     searchStr,
     items,

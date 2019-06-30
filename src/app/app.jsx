@@ -8,6 +8,7 @@ import { PrivateRoute } from "../components";
 import { RegisterPage } from "../containers/RegisterPage";
 import { SearchPage } from "../containers/SearchPage";
 import { LoginPage } from "../containers/LoginPage";
+import { InformationPage } from "../containers/InformationPage";
 
 import * as sccs from "./styles/app-styles.scss";
 
@@ -17,7 +18,6 @@ class App extends React.Component {
 
     const { dispatch } = this.props;
     history.listen((location, action) => {
-      // clear alert on location change
       dispatch(alertActions.clear());
     });
   }
@@ -25,7 +25,7 @@ class App extends React.Component {
   render() {
     const { alert } = this.props;
     return (
-      <div className="jumbotron page-background-color">
+      <div className="jumbotron">
         <div className="container">
           <div className="col-sm-8 col-sm-offset-2">
             {alert.message && (
@@ -34,6 +34,7 @@ class App extends React.Component {
             <Router history={history}>
               <div>
                 <PrivateRoute exact path="/" component={SearchPage} />
+                <PrivateRoute exact path="/info" component={InformationPage} />
                 <Route path="/register" component={RegisterPage} />
                 <Route path="/login" component={LoginPage} />
               </div>

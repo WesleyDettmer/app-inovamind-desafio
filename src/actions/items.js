@@ -100,10 +100,6 @@ function fetchAllItems(searchStr) {
   ];
 
   return dispatch => {
-    /*
-     * TODO Prepare responses as they come back
-     * As opposed to in one go when all promises have returned as is current
-     */
     dispatch(updateSrcString(searchStr));
     dispatch(requestItems(searchStr));
     return Promise.all(
