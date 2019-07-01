@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import { REQUEST_ITEMS, RECEIVE_ITEMS, UPDATE_SRC } from "../actions/items";
+import { itemModels } from "../models";
 
 function searchStr(state = "", action) {
   switch (action.type) {
-    case UPDATE_SRC:
+    case itemModels.UPDATE_SRC:
       return action.searchStr;
     default:
       return state;
@@ -19,12 +19,12 @@ function items(
   action
 ) {
   switch (action.type) {
-    case REQUEST_ITEMS:
+    case itemModels.REQUEST_ITEMS:
       return Object.assign({}, state, {
         searchStr: action.searchStr,
         isFetching: true
       });
-    case RECEIVE_ITEMS:
+    case itemModels.RECEIVE_ITEMS:
       return Object.assign({}, state, {
         isFetching: false,
         items: action.items
@@ -36,8 +36,8 @@ function items(
 
 function itemsBySearchString(state = {}, action) {
   switch (action.type) {
-    case RECEIVE_ITEMS:
-    case REQUEST_ITEMS:
+    case itemModels.RECEIVE_ITEMS:
+    case itemModels.REQUEST_ITEMS:
       return Object.assign({}, state, {
         [action.searchStr]: items(state[action.searchStr], action)
       });

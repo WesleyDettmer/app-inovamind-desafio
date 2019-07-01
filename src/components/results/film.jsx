@@ -1,8 +1,9 @@
-import React from "../../../node_modules/react";
+import React from "react";
 import PropTypes from "prop-types";
+import { history } from "../../helpers";
 
 const Film = props => (
-  <li className="results__item">
+  <li className="results__item" onClick={() => itemHandler(props)}>
     <h3 className="results__title">
       {props.item.name}
       <span> (Episode {props.item.episode_id})</span>
@@ -10,17 +11,21 @@ const Film = props => (
     <div className="results__bg" id={props.item.type} />
     <ul className="results__info">
       <li>
-        Released <span>{props.item.release_date}</span>{" "}
+        Released <span>{props.item.release_date}</span>
       </li>
       <li>
-        Directed by <span>{props.item.director}</span>{" "}
+        Directed by <span>{props.item.director}</span>
       </li>
       <li>
-        Produced by <span>{props.item.producer}</span>{" "}
+        Produced by <span>{props.item.producer}</span>
       </li>
     </ul>
   </li>
 );
+
+function itemHandler(props) {
+  history.push("/info");
+}
 
 Film.propTypes = {
   item: PropTypes.shape({

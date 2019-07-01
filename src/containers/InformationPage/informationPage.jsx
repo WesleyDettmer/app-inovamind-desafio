@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { userActions } from "../../actions";
+
+import { informationActions } from "../../actions";
 
 class InformationPage extends Component {
   componentDidMount() {
-    this.props.dispatch(userActions.getAll());
+    this.props.dispatch(informationActions.getInfo());
   }
   constructor(props) {
     super(props);
@@ -16,13 +17,12 @@ class InformationPage extends Component {
 }
 
 function mapStateToProps(state) {
-  const { searchStr, itemsBySearchString } = state.items;
-  const { isFetching, items } = itemsBySearchString[searchStr] || {
-    searchStr,
-    isFetching: true,
-    items: []
+  const { users, authentication } = state;
+  const { user } = authentication;
+  return {
+    user,
+    users
   };
-  console.log(items);
 }
 
 const connectedInformationPage = connect(mapStateToProps)(InformationPage);

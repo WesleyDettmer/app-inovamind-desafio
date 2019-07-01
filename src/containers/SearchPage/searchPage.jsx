@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Search from "../../components/search";
 import Results from "../../components/results";
-import { fetchItemsIfNeeded } from "../../actions/items";
+import { fetchItemsIfNeeded } from "../../actions/items.actions";
 import PropTypes from "prop-types";
 
 class SearchPage extends Component {
