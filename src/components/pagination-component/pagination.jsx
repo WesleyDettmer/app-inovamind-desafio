@@ -11,7 +11,7 @@ const Pagination = props => {
   const pages = _.range(1, pagesCount + 1);
   return (
     <nav>
-      <ul className="pagination">
+      <ul className="pagination pager-cursor">
         {pages.map(page => (
           <li
             key={page}

@@ -1,4 +1,3 @@
-import fetch from "isomorphic-fetch";
 import { itemModels } from "../models";
 import { searchService } from "../services";
 import { alertActions } from "./";

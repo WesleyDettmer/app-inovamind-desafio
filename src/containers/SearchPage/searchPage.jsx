@@ -9,12 +9,11 @@ import PropTypes from "prop-types";
 
 class SearchPage extends Component {
   state = {
-    pageSize: 4,
+    pageSize: 3,
     currentPage: 1
   };
 
   constructor(props) {
-    console.log(props);
     super(props);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -49,12 +48,14 @@ class SearchPage extends Component {
             {items.length > 0 && <Results items={cards} />}
           </section>
         </div>
-        <Pagination
-          itemsCount={items.length + 1}
-          pageSize={pageSize}
-          currentPage={currentPage}
-          onPageChange={this.handlePageChange}
-        />
+        <div className="text-center">
+          <Pagination
+            itemsCount={items.length + 1}
+            pageSize={pageSize}
+            currentPage={currentPage}
+            onPageChange={this.handlePageChange}
+          />
+        </div>
       </React.Fragment>
     );
   }

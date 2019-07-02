@@ -1,10 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import * as sccs from "./film-intro.scss";
-
 const FilmInformation = props => (
-  <div>
+  <div className="information-result">
     <h3 className="row text-center">
       {props.item.name}
       <span> (Episode {props.item.episode_id})</span>

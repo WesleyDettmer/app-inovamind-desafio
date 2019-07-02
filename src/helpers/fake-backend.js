@@ -74,7 +74,7 @@ export function configureFakeBackend() {
           return;
         }
 
-        if (url.endsWith("/users/register") && obj.method === "GET") {
+        if (url.endsWith("/users/register") && obj.method === "POST") {
           let newUser = JSON.parse(obj.body);
           let duplicateUser = users.filter(user => {
             return user.username === newUser.username;
