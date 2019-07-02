@@ -14,6 +14,7 @@ class SearchPage extends Component {
   };
 
   constructor(props) {
+    console.log(props);
     super(props);
     this.handleChange = this.handleChange.bind(this);
   }

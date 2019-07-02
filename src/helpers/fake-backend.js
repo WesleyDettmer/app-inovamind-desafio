@@ -16,14 +16,14 @@ export function configureFakeBackend() {
     }
   ];
   let realFetch = window.fetch;
-  window.fetch = function(url, opts) {
+  window.fetch = function(url, obj) {
     return new Promise((resolve, reject) => {
       // wrap in timeout to simulate server api call
       setTimeout(() => {
         // authenticate
-        if (url.endsWith("/users/authenticate") && opts.method === "POST") {
+        if (url.endsWith("/users/authenticate") && obj.method === "POST") {
           // get parameters from post request
-          let params = JSON.parse(opts.body);
+          let params = JSON.parse(obj.body);
 
           // find if any user matches login credentials
           let filteredUsers = users.filter(user => {
@@ -56,11 +56,11 @@ export function configureFakeBackend() {
         }
 
         // get users
-        if (url.endsWith("/users") && opts.method === "GET") {
+        if (url.endsWith("/users") && obj.method === "GET") {
           // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
           if (
-            opts.headers &&
-            opts.headers.Authorization === "Bearer fake-jwt-token"
+            obj.headers &&
+            obj.headers.Authorization === "Bearer fake-jwt-token"
           ) {
             resolve({
               ok: true,
@@ -74,8 +74,8 @@ export function configureFakeBackend() {
           return;
         }
 
-        if (url.endsWith("/users/register") && opts.method === "GET") {
-          let newUser = JSON.parse(opts.body);
+        if (url.endsWith("/users/register") && obj.method === "GET") {
+          let newUser = JSON.parse(obj.body);
           let duplicateUser = users.filter(user => {
             return user.username === newUser.username;
           }).length;
@@ -93,7 +93,7 @@ export function configureFakeBackend() {
         }
 
         // pass through any requests not handled above
-        realFetch(url, opts).then(response => resolve(response));
+        realFetch(url, obj).then(response => resolve(response));
       }, 500);
     });
   };
