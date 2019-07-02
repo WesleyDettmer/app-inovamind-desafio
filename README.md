@@ -33,12 +33,10 @@ dos personagens/espaçonaves/planetas e a última para mostrar os detalhes dos m
 O layout e por sua conta, seja criativo. A arquitetura é por sua conta, seja esperto."
 
 
-
 ---- Installing and Setting ----
 
 1° Passo
 Para clonar a aplicação, execute:
->>>>>>> 3d97a6f6170ccaa7380b8c7ec605b6f9990b0212
 
 git clone https://github.com/WesleyDettmer/app-inovamind-desafio.git
 
