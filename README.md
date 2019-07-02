@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Desafio Inovamind Projeto exemplo de uma aplicação consumidora da API https://swapi.co/
 
 A aplicação, desenvolvida em React+Redux, tem como objetivo saciar os seguintes requisitos:
