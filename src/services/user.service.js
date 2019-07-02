@@ -3,7 +3,8 @@ import { authHeader } from "../helpers";
 
 export const userService = {
   login,
-  logout
+  logout,
+  register
 };
 
 function login(username, password) {
@@ -26,6 +27,18 @@ function login(username, password) {
 function logout() {
   // remove usuário do user from local storage to log user out
   localStorage.removeItem("user");
+}
+
+function register(user) {
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(user)
+  };
+
+  return fetch(`${config.apiUrl}/users/register`, requestOptions).then(
+    handleResponse
+  );
 }
 
 function handleResponse(response) {

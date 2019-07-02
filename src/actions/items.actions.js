@@ -87,7 +87,8 @@ function prepareItems(array) {
           episode_id: property.episode_id,
           director: property.director,
           producer: property.producer,
-          release_date: property.release_date
+          release_date: property.release_date,
+          opening_crawl: property.opening_crawl
         };
       } else if (Object.hasOwnProperty.call(property, "model")) {
         return {

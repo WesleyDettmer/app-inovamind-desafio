@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { informationActions } from "../../actions";
+import InformationResults from "../../components/information/index";
 
 class InformationPage extends Component {
   componentDidMount() {
@@ -12,7 +13,14 @@ class InformationPage extends Component {
   }
 
   render() {
-    return <div className="container">penis</div>;
+    const { location } = this.props;
+    return (
+      <div className="container">
+        <section className="content">
+          {<InformationResults items={location.state.item} />}
+        </section>
+      </div>
+    );
   }
 }
 

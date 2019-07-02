@@ -1,12 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { history } from "../../helpers";
 
-const Planet = props => (
-  <li className="results__item" onClick={() => itemHandler(props)}>
-    <h3 className="results__title">{props.item.name}</h3>
-    <div className="results__bg" id={props.item.type} />
-    <ul className="results__info">
+const PlanetInformation = props => (
+  <div>
+    <h3>{props.item.name}</h3>
+    <div id={props.item.type} />
+    <ul>
       <li>
         Terrain <span>{props.item.terrain}</span>{" "}
       </li>
@@ -17,14 +16,10 @@ const Planet = props => (
         Population <span>{props.item.population}</span>{" "}
       </li>
     </ul>
-  </li>
+  </div>
 );
 
-function itemHandler(props) {
-  history.push("/info", props);
-}
-
-Planet.propTypes = {
+PlanetInformation.propTypes = {
   item: PropTypes.shape({
     terrain: PropTypes.string,
     gravity: PropTypes.string,
@@ -34,4 +29,4 @@ Planet.propTypes = {
   })
 };
 
-export default Planet;
+export default PlanetInformation;

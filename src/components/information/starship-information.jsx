@@ -1,12 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { history } from "../../helpers";
 
-const Film = props => (
-  <li className="results__item" onClick={() => itemHandler(props)}>
-    <h3 className="results__title">{props.item.name}</h3>
-    <div className="results__bg" id={props.item.type} />
-    <ul className="results__info">
+const FilmInformation = props => (
+  <div>
+    <h3>{props.item.name}</h3>
+    <div id={props.item.type} />
+    <ul>
       <li>
         Model <span>{props.item.model}</span>{" "}
       </li>
@@ -17,14 +16,10 @@ const Film = props => (
         Hyperdrive Rating <span>{props.item.hyperdrive_rating}</span>{" "}
       </li>
     </ul>
-  </li>
+  </div>
 );
 
-function itemHandler(props) {
-  history.push("/info", props);
-}
-
-Film.propTypes = {
+FilmInformation.propTypes = {
   item: PropTypes.shape({
     model: PropTypes.string,
     name: PropTypes.string.isRequired,
@@ -34,4 +29,4 @@ Film.propTypes = {
   })
 };
 
-export default Film;
+export default FilmInformation;

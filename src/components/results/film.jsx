@@ -24,7 +24,7 @@ const Film = props => (
 );
 
 function itemHandler(props) {
-  history.push("/info");
+  history.push("/info", props);
 }
 
 Film.propTypes = {
@@ -34,7 +34,8 @@ Film.propTypes = {
     name: PropTypes.string.isRequired,
     producer: PropTypes.string,
     release_date: PropTypes.string,
-    type: PropTypes.string.isRequired
+    type: PropTypes.string.isRequired,
+    opening_crawl: PropTypes.string
   })
 };
 
