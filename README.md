@@ -7,9 +7,7 @@ A aplicação, desenvolvida em React+Redux, tem como objetivo saciar os seguinte
 - Arquitetura Single Page Application.
 - Possuir Login e Registro.
 - Autenticação para poder acessar a página de procura e detalhes do resultado. A Autenticação é via JWT, onde é gerado um token e este é verificado sempre que necessário (no caso, as páginas localhost:port/info e localhost:port/search).
-- Responsividade.
 - Componentização.
-- i18n.
 
 "O app deve conter no mínimo 3 telas. Uma para se registrar na aplicação, uma para listar as informações
 dos personagens/espaçonaves/planetas e a última para mostrar os detalhes dos mesmos.
